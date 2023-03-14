@@ -1,0 +1,22 @@
+
+    We can create a project using cargo new.
+    We can build a project using cargo build.
+    We can build and run a project in one step using cargo run.
+    We can build a project without producing a binary to check for errors using cargo check.
+    Instead of saving the result of the build in the same directory as our code, Cargo stores it in the target/debug directory.
+
+
+When your project is finally ready for release, you can use cargo build --release to compile it with optimizations. This command will create an executable in target/release instead of target/debug. The optimizations make your Rust code run faster, but turning them on lengthens the time it takes for your program to compile. This is why there are two different profiles: one for development, when you want to rebuild quickly and often, and another for building the final program you’ll give to a user that won’t be rebuilt repeatedly and that will run as fast as possible. If you’re benchmarking your code’s running time, be sure to run cargo build --release and benchmark with the executable in target/release.
+
+Create New Project:
+$ cargo new <project name>
+$ cd <project name>
+
+Compile and run with one command:
+cargo run
+
+When we include an external dependency, Cargo fetches the latest versions of everything that dependency needs from the registry, which is a copy of data from Crates.io. Crates.io is where people in the Rust ecosystem post their open source Rust projects for others to use
+
+Note: You won’t just know which traits to use and which methods and functions to call from a crate, so each crate has documentation with instructions for using it. Another neat feature of Cargo is that running the cargo doc --open command will build documentation provided by all of your dependencies locally and open it in your browser. If you’re interested in other functionality in the rand crate, for example, run cargo doc --open and click rand in the sidebar on the left.
+
+https://rust-book.cs.brown.edu/appendix-01-keywords.html
